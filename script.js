@@ -67,7 +67,7 @@ function holdTurn() {
 
 function rollDice() {
   if (isFinished) return;
-  const diceValue = Math.floor(Math.random() * 4) + 2;
+  const diceValue = Math.floor(Math.random() * 5) + 1;
 
   const dice_img = `dice-${diceValue}.png`;
   dice.src = dice_img;
