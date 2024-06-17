@@ -22,11 +22,24 @@ body {
   justify-content: center;
 }
 
-/* LAYOUT */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 2rem; */
+}
+
 main {
+  display: flex;
+  gap: 2.4rem;
+  flex-direction: column;
+}
+
+/* LAYOUT */
+.game-container {
   position: relative;
-  width: 100rem;
-  height: 60rem;
+  width: 90vw;
+  height: 60vh;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
@@ -42,6 +55,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   transition: all 0.75s;
 }
 
@@ -60,7 +74,7 @@ main {
   font-size: 8rem;
   font-weight: 300;
   color: #c7365f;
-  margin-bottom: auto;
+  /* margin-bottom: auto; */
 }
 
 .player--active {
@@ -101,9 +115,9 @@ main {
 
 /* ABSOLUTE POSITIONED ELEMENTS */
 .btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  /* position: absolute; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
   color: #444;
   background: none;
   border: none;
@@ -129,18 +143,8 @@ main {
   margin-right: 0.7rem;
 }
 
-.btn--new {
-  top: 4rem;
-}
-.btn--roll {
-  top: 39.3rem;
-}
-.btn--hold {
-  top: 46.1rem;
-}
-
 .btn:active {
-  transform: translate(-50%, 3px);
+  /* transform: translate(-50%, 3px); */
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 
@@ -151,7 +155,7 @@ main {
 .dice {
   position: absolute;
   left: 50%;
-  top: 16.5rem;
+  top: 48%;
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
@@ -164,4 +168,36 @@ main {
 .player--winner .name {
   font-weight: 700;
   color: #c7365f;
+}
+.holder {
+  /* margin-top: 2.4rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.8rem;
+}
+
+@media (max-width: 52em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 42em) {
+  .game-container {
+    flex-direction: column;
+    height: 80vh;
+  }
+}
+
+@media (max-width: 29em) {
+  html {
+    font-size: 42%;
+  }
+}
+
+@media (max-width: 24em) {
+  html {
+    font-size: 35%;
+  }
 }
