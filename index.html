@@ -11,7 +11,7 @@
   <body>
     <main>
       <header>
-        <button class="btn btn--new">🔄 New game</button>
+        <button class="btn btn--new" onclick="resetGame()">🔄 New game</button>
       </header>
       <div class="game-container">
         <section class="player player--0 player--active">
@@ -33,8 +33,8 @@
       </div>
       <img src="dice-5.png" alt="Playing dice" class="dice" />
       <div class="holder">
-        <button class="btn btn--roll">🎲 Roll dice</button>
-        <button class="btn btn--hold">📥 Hold</button>
+        <button class="btn btn--roll" onclick="rollDice()">🎲 Roll dice</button>
+        <button class="btn btn--hold" onclick="holdTurn()">📥 Hold</button>
       </div>
     </main>
     <script src="script.js"></script>

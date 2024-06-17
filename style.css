@@ -113,11 +113,7 @@ main {
   font-size: 3.5rem;
 }
 
-/* ABSOLUTE POSITIONED ELEMENTS */
 .btn {
-  /* position: absolute; */
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
   color: #444;
   background: none;
   border: none;
@@ -170,7 +166,6 @@ main {
   color: #c7365f;
 }
 .holder {
-  /* margin-top: 2.4rem; */
   display: flex;
   align-items: center;
   justify-content: center;
