@@ -7,11 +7,9 @@ Dice Wars is a two-player dice game built using JavaScript and React. The aim is
 - [Features](#features)
 - [Rules](#rules)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
 - [How to Play](#how-to-play)
-- [Screenshots](#screenshots)
+- [Deployed At](#deployed-at)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -36,28 +34,6 @@ Dice Wars is a two-player dice game built using JavaScript and React. The aim is
 - **CSS**: For basic styling
 - **Netlify**: Deployed for live demo
 
-## Installation
-
-To run the project locally, follow these steps:
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/LogiCule/dice-wars.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd dice-wars
-    ```
-3. Install the dependencies:
-    ```bash
-    npm install
-    ```
-4. Start the development server:
-    ```bash
-    npm start
-    ```
-5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 ## How to Play
 
 1. Launch the game in your browser.
@@ -66,9 +42,9 @@ To run the project locally, follow these steps:
 4. If a player rolls a one, their current score is reset, and it becomes the opponent's turn.
 5. The first player to reach 100 total points wins the game.
 
-## Screenshots
+## Deployed At
 
-![Gameplay Screenshot](link_to_screenshot)
+[Play Here](https://dice-wars-by-logicule.netlify.app/)
 
 ## Contributing
 
