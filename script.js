@@ -181,20 +181,36 @@ function holdTurn() {
 function rollDice() {
   if (isFinished) return;
   playSound('roll');
-  const diceValue = Math.floor(Math.random() * 6) + 1;
-
-  const dice_img = `dice-${diceValue}.png`;
-  dice.src = dice_img;
-
-  if (diceValue === 1) {
-    playSound('lose');
-    pList[currentPlayer].current = 0;
-    currentPlayer = 1 ^ currentPlayer;
-  } else {
-    pList[currentPlayer].current += diceValue;
-  }
-
-  updateDisplay();
+  
+  // Add rolling animation class
+  dice.classList.add('rolling');
+  
+  // Rapidly cycle through dice images for visual effect
+  let rollCount = 0;
+  const rollInterval = setInterval(() => {
+    const randomDice = Math.floor(Math.random() * 6) + 1;
+    dice.src = `dice-${randomDice}.png`;
+    rollCount++;
+    if (rollCount >= 8) {
+      clearInterval(rollInterval);
+      
+      // Final dice value
+      const diceValue = Math.floor(Math.random() * 6) + 1;
+      dice.src = `dice-${diceValue}.png`;
+      dice.classList.remove('rolling');
+      
+      // Process the roll result
+      if (diceValue === 1) {
+        playSound('lose');
+        pList[currentPlayer].current = 0;
+        currentPlayer = 1 ^ currentPlayer;
+      } else {
+        pList[currentPlayer].current += diceValue;
+      }
+      
+      updateDisplay();
+    }
+  }, 50);
 }
 
 function resetGame() {
