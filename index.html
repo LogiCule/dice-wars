@@ -10,10 +10,10 @@
   </head>
   <body>
     <main>
-      <header>
-        <button class="btn btn--new" onclick="resetGame()">🔄 New game</button>
-      </header>
       <div class="game-container">
+        <div class="game-top-bar">
+            <button class="btn btn--new" onclick="resetGame()">🔄 New game</button>
+        </div>
         <section class="player player--0 player--active">
           <h2 class="name" id="name--0">Player 1</h2>
           <p class="score" id="score--0">43</p>
@@ -30,11 +30,12 @@
             <p class="current-score" id="current--1">0</p>
           </div>
         </section>
-      </div>
-      <img src="dice-5.png" alt="Playing dice" class="dice" />
-      <div class="holder">
-        <button class="btn btn--roll" onclick="rollDice()">🎲 Roll dice</button>
-        <button class="btn btn--hold" onclick="holdTurn()">📥 Hold</button>
+
+        <div class="game-controls">
+            <img src="dice-5.png" alt="Playing dice" class="dice" />
+            <button class="btn btn--roll" onclick="rollDice()">🎲 Roll dice</button>
+            <button class="btn btn--hold" onclick="holdTurn()">📥 Hold</button>
+        </div>
       </div>
     </main>
     <script src="script.js"></script>
