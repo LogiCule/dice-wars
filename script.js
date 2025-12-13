@@ -27,6 +27,7 @@ const pList = [p1, p2];
 let winningScore = 50; // Default Medium
 let isFinished = false;
 let currentPlayer = 0;
+let soundEnabled = true; // Sound toggle state
 
 // ==================== SOUND EFFECTS ====================
 const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -38,7 +39,14 @@ function initAudio() {
   }
 }
 
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  const btn = document.getElementById('sound-toggle');
+  btn.textContent = soundEnabled ? '🔊' : '🔇';
+}
+
 function playSound(type) {
+  if (!soundEnabled) return; // Check if sound is enabled
   initAudio();
   const oscillator = audioCtx.createOscillator();
   const gainNode = audioCtx.createGain();

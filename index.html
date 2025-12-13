@@ -14,6 +14,7 @@
         <div class="game-top-bar">
             <button class="btn btn--new" onclick="resetGame()">🔄 New game</button>
             <button class="btn btn--settings" onclick="toggleSettings()">⚙️ Settings</button>
+            <button class="btn btn--sound" id="sound-toggle" onclick="toggleSound()">🔊</button>
         </div>
         <section class="player player--0 player--active">
           <h2 class="name" id="name--0" contenteditable="true" spellcheck="false">Player 1</h2>
@@ -36,6 +37,11 @@
             <img src="dice-5.png" alt="Playing dice" class="dice" />
             <button class="btn btn--roll" onclick="rollDice()">🎲 Roll dice</button>
             <button class="btn btn--hold" onclick="holdTurn()">📥 Hold</button>
+        </div>
+        <div class="shortcuts-hint">
+            <span><kbd>R</kbd> Roll</span>
+            <span><kbd>H</kbd> Hold</span>
+            <span><kbd>N</kbd> New Game</span>
         </div>
       </div>
     </main>

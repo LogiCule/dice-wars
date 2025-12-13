@@ -79,7 +79,8 @@ main {
 .player--winner {
   background: var(--glass-active);
   background: radial-gradient(circle at center, rgba(255, 215, 0, 0.2), transparent);
-  border: 1px solid var(--color-primary);
+  box-shadow: inset 0 0 0 3px var(--color-primary); /* Inset shadow instead of border */
+  border-radius: 20px; /* Match container */
 }
 
 .player--winner .name {
@@ -225,6 +226,31 @@ main {
   height: 10rem;
   filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
   transition: transform 0.5s;
+}
+
+/* SHORTCUTS HINT - Desktop Only */
+.shortcuts-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
+  font-size: 1.4rem;
+  color: var(--color-white);
+  opacity: 1;
+}
+
+.shortcuts-hint kbd {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  margin-right: 0.4rem;
+  color: var(--color-white);
 }
 
 /* MEDIA QUERIES (Responsiveness) */
@@ -392,6 +418,11 @@ main {
     
     .btn--roll { order: 1; }
     .btn--hold { order: 3; }
+    
+    /* Hide shortcuts on mobile */
+    .shortcuts-hint {
+        display: none;
+    }
 }
 
 
@@ -420,6 +451,26 @@ main {
     background: var(--color-secondary);
     color: var(--color-bg-1);
     transform: translateX(0.5rem) translateY(-3px); /* Maintain X position */
+}
+
+/* =============== SOUND TOGGLE BUTTON =============== */
+.btn--sound {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    left: auto;
+    transform: none;
+    padding: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 1.8rem;
+    border-color: var(--color-text-muted);
+    color: var(--color-text-muted);
+}
+.btn--sound:hover {
+    background: var(--color-white);
+    color: var(--color-bg-1);
+    transform: translateY(-3px); /* Only vertical, no horizontal shift */
 }
 
 /* =============== EDITABLE NAMES =============== */
@@ -562,6 +613,21 @@ main {
         margin-left: 1rem;
     }
     .btn--settings:hover, .btn--settings:active {
+        transform: translateY(-1px) !important;
+    }
+    
+    .btn--sound {
+        position: static;
+        transform: none;
+        top: auto;
+        right: auto;
+        width: auto;
+        height: auto;
+        padding: 0.8rem 1rem;
+        font-size: 1.4rem;
+        margin-left: 0.5rem;
+    }
+    .btn--sound:hover, .btn--sound:active {
         transform: translateY(-1px) !important;
     }
 
